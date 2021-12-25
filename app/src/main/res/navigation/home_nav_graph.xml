@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bsrdigicoin.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_adminActivity"
+            app:destination="@id/adminActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_userActivity"
+            app:destination="@id/userActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/adminActivity"
+        android:name="com.example.bsrdigicoin.activity.AdminActivity"
+        android:label="activity_admin"
+        tools:layout="@layout/activity_admin" />
+    <activity
+        android:id="@+id/userActivity"
+        android:name="com.example.bsrdigicoin.activity.UserActivity"
+        android:label="activity_user"
+        tools:layout="@layout/activity_user" />
+</navigation>
