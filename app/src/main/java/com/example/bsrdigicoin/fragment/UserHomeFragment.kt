@@ -1,60 +1,64 @@
 package com.example.bsrdigicoin.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.room.Room
 import com.example.bsrdigicoin.R
+import com.example.bsrdigicoin.databinding.FragmentBuySellDialogBinding
+import com.example.bsrdigicoin.databinding.FragmentUserHomeBinding
+import com.example.bsrdigicoin.db.Transaction
+import com.example.bsrdigicoin.db.TransactionDatabase
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [UserHomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class UserHomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentUserHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_home, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_home, container, false)
+        val db = Room.databaseBuilder(
+            requireContext(),
+            TransactionDatabase::class.java, "transaction_database"
+        ).allowMainThreadQueries().build()
+        val transactionDao = db.transactionDao()
+
+        binding.btnStockSellBuy.setOnClickListener {
+            val dialog = BottomSheetDialog(requireContext())
+            val view = layoutInflater.inflate(R.layout.fragment_buy_sell_dialog, null)
+            val binding2: FragmentBuySellDialogBinding = FragmentBuySellDialogBinding.bind(view)
+            dialog.setContentView(view)
+            dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+
+            dialog.show()
+            transactionDao.insertAll(
+                Transaction(
+                    0,
+                    "Siddhi Anil Bairagi",
+                    "Bitcoin",
+                    2,
+                    "21:12:2021",
+                    "21:21",
+                    1000.00,
+                    2000.00,
+                    121,
+                    "Buy"
+                )
+            )
+
+        }
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UserHomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UserHomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

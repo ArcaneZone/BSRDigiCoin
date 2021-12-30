@@ -20,12 +20,13 @@
 
 
         <TextView
+            android:id="@+id/txt_no_of_stock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_hashtag"
             android:text="2"
             android:textSize="40dp"
-            android:drawableTop="@drawable/ic_hashtag"
             android:textStyle="bold" />
     </RelativeLayout>
         <LinearLayout
@@ -37,6 +38,7 @@
             android:background="@drawable/background_border"
             android:weightSum="3">
             <TextView
+                android:id="@+id/txt_stock_name"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:text="@string/decoin_stock"
@@ -52,6 +54,7 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:id="@+id/txt_stock_date"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -63,6 +66,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/txt_stock_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,6 +85,7 @@
                 android:layout_weight="1">
 
                 <TextView
+                    android:id="@+id/txt_stock_transaction_type"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -92,6 +97,7 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/txt_stock_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

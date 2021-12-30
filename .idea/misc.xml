@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/fragment_admin_home.xml" value="0.2586050724637681" />
         <entry key="app/src/main/res/layout/fragment_admin_transaction.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/fragment_buy_sell_dialog.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_graph.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2296875" />
         <entry key="app/src/main/res/layout/fragment_user_home.xml" value="0.346875" />

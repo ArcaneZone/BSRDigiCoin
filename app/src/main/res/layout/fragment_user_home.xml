@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.UserHomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".fragment.UserHomeFragment">
 
-</FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/btn_stock_sell_buy"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="62dp"
+                app:iconGravity="textStart"
+                app:iconPadding="20dp"
+                app:strokeColor="@color/black"
+                android:text="BUY/SELL"
+                app:icon="@drawable/ic_sell"/>
+
+
+
+    </RelativeLayout>
+</layout>

@@ -5,7 +5,7 @@ import java.util.*
 data class UserTransaction(
     val count:Int,
     val stockName:String,
-    val date: Date,
+    val date: String,
     val time:String,
     val transactionType:String,
     val TotalAmount:Double,

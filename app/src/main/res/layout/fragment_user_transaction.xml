@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.UserTransactionFragment"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="USER TRANSACTION"
-        android:layout_marginTop="35dp"
-        android:layout_gravity="center"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="20dp"
-        tools:listitem="@layout/user_transaction_single"/>
+        android:layout_height="match_parent"
+        tools:context=".fragment.UserTransactionFragment"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USER TRANSACTION"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_user_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/user_transaction_single" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

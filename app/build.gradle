@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'androidx.navigation.safeargs'
 }
-
+apply plugin: 'kotlin-kapt'
 android {
     compileSdk 32
 
@@ -62,4 +62,10 @@ dependencies {
 
     //graph
     implementation 'com.jjoe64:graphview:4.2.2'
+
+    def room_version = "2.4.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
 }
