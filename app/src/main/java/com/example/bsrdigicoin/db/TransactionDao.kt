@@ -10,11 +10,8 @@ interface TransactionDao {
     @Query("SELECT * FROM transaction_table")
     fun getAll(): List<Transaction>
 
-    @Query("SELECT * FROM transaction_table WHERE user_id IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<Transaction>
-
     @Insert
-    fun insertAll(transaction: Transaction)
+     fun insert(transaction: Transaction)
 
     @Delete
     fun delete(transaction: Transaction)

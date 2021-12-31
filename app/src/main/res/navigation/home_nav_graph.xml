@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_userActivity"
             app:destination="@id/userActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_userRegistrationFragment"
+            app:destination="@id/userRegistrationFragment" />
     </fragment>
     <activity
         android:id="@+id/adminActivity"
@@ -27,4 +30,9 @@
         android:name="com.example.bsrdigicoin.activity.UserActivity"
         android:label="activity_user"
         tools:layout="@layout/activity_user" />
+    <fragment
+        android:id="@+id/userRegistrationFragment"
+        android:name="com.example.bsrdigicoin.UserRegistrationFragment"
+        android:label="fragment_user_registration"
+        tools:layout="@layout/fragment_user_registration" />
 </navigation>

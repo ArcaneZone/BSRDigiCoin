@@ -39,10 +39,9 @@ class UserHomeFragment : Fragment() {
             dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
 
             dialog.show()
-            transactionDao.insertAll(
+            transactionDao.insert(
                 Transaction(
                     0,
-                    "Siddhi Anil Bairagi",
                     "Bitcoin",
                     2,
                     "21:12:2021",
