@@ -10,12 +10,16 @@
         android:name="com.example.bsrdigicoin.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+        <argument
+            android:name="myArg"
+            app:argType="integer"
+             />
         <action
             android:id="@+id/action_loginFragment_to_adminActivity"
             app:destination="@id/adminActivity" />
         <action
             android:id="@+id/action_loginFragment_to_userActivity"
-            app:destination="@id/userActivity" />
+            app:destination="@id/userActivity"/>
         <action
             android:id="@+id/action_loginFragment_to_userRegistrationFragment"
             app:destination="@id/userRegistrationFragment" />
@@ -29,7 +33,12 @@
         android:id="@+id/userActivity"
         android:name="com.example.bsrdigicoin.activity.UserActivity"
         android:label="activity_user"
-        tools:layout="@layout/activity_user" />
+        tools:layout="@layout/activity_user" >
+        <argument
+            android:name="myArg"
+            app:argType="integer"
+            />
+    </activity>
     <fragment
         android:id="@+id/userRegistrationFragment"
         android:name="com.example.bsrdigicoin.UserRegistrationFragment"

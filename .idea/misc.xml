@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Siddhi Anil Bairagi/StudioProjects/BSRDigiCoin/app/src/main/res/layout/activity_user.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Siddhi Anil Bairagi/StudioProjects/BSRDigiCoin/app/src/main/res/layout/fragment_graph.xml" value="0.2006340579710145" />
+        <entry key="..\:/Users/Siddhi Anil Bairagi/StudioProjects/BSRDigiCoin/app/src/main/res/layout/fragment_login.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/Siddhi Anil Bairagi/StudioProjects/BSRDigiCoin/app/src/main/res/layout/fragment_user_home.xml" value="0.14375" />
+        <entry key="..\:/Users/Siddhi Anil Bairagi/StudioProjects/BSRDigiCoin/app/src/main/res/layout/fragment_user_registration.xml" value="0.264" />
         <entry key="app/src/main/res/drawable/background_border.xml" value="0.36302083333333335" />
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2296875" />

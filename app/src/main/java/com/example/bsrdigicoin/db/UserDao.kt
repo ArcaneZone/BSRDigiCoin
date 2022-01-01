@@ -18,4 +18,6 @@ interface UserDao {
     fun getUserById(userid:Int): User?
     @Query("SELECT EXISTS(SELECT * FROM user_table WHERE username=:username and userPassword=:password)")
     fun ifUserExist(username:String,password:String) : Boolean
+    @Query("SELECT * FROM user_table WHERE username=:username and userPassword=:password")
+    fun getUserByUserName(username:String,password:String): User?
 }

@@ -3,7 +3,13 @@ plugins {
     id 'kotlin-android'
     id 'androidx.navigation.safeargs'
 }
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdk 32
 
@@ -59,12 +65,14 @@ dependencies {
     // Java language implementation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation 'androidx.core:core-ktx:1.8.0-alpha02'
+
 
     //graph
     implementation 'com.jjoe64:graphview:4.2.2'
 
-    implementation 'androidx.room:room-ktx:2.2.1'
-    kapt "androidx.room:room-compiler:2.2.1"
+    implementation 'androidx.room:room-ktx:2.4.0'
+    kapt "androidx.room:room-compiler:2.4.0"
 
     implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"
 

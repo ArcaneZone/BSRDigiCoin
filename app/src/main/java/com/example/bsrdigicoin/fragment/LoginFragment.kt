@@ -5,22 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.room.Room
 import com.example.bsrdigicoin.R
 import com.example.bsrdigicoin.databinding.FragmentLoginBinding
 import com.example.bsrdigicoin.db.TransactionDatabase
-import com.example.bsrdigicoin.viewmodel.LoginViewModel
 
 
 class LoginFragment : Fragment() {
 
-    lateinit var binding: FragmentLoginBinding
-
-    private lateinit var loginViewModel: LoginViewModel
+    private lateinit var binding: FragmentLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +47,6 @@ class LoginFragment : Fragment() {
 //        binding.loginViewModel = loginViewModel;
 
         binding.btnLoginButton.setOnClickListener {
-            var userType: Char = 'F'
             if (binding.toggleButtonGroup.checkedButtonId == R.id.toggle_btn_admin) {
                 if (binding.etLoginUsername.editText?.text!!.toString() == "admin" && binding.etLoginPassword.editText?.text!!.toString() == "admin"
                 ) {
@@ -65,12 +61,21 @@ class LoginFragment : Fragment() {
                     binding.etLoginUsername.editText!!.text.toString(),
                     binding.etLoginPassword.editText!!.text.toString()
                 )
-                if (bool)
-                    it.findNavController().navigate(R.id.action_loginFragment_to_userActivity)
+
+                val user=transactionDao.getUserByUserName(binding.etLoginUsername.editText!!.text.toString(),binding.etLoginPassword.editText!!.text.toString())
+                println("user is ${user?.fullName}")
+
+
+                if (bool){
+                    val userid=user?.userId.toString().toInt()
+                    val action=LoginFragmentDirections.actionLoginFragmentToUserActivity(userid)
+                    it.findNavController().navigate(action)
+                }
+
                 else {
                     Toast.makeText(
                         requireContext(),
-                        "Neither of two is Correct",
+                        "User not exist.",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

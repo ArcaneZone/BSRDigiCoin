@@ -16,9 +16,4 @@ interface TransactionDao {
     @Delete
     fun delete(transaction: Transaction)
 
-    @Query("SELECT * FROM transaction_table where user_id=:id")
-    fun getTransactionbyId(id:Int): List<Transaction>
-
-    @Query("SELECT * FROM transaction_table WHERE status=:stat LIMIT 3 ")
-    fun getTransactionForReview(stat:Char): List<Transaction>
 }
