@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="20dp"
+    android:layout_margin="20dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/adm_transaction_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="User Name"
+        android:text="User Name"
+        android:drawableStart="@drawable/ic_user"
+        android:layout_margin="10dp"/>
+        />
+
+        <TextView
+            android:id="@+id/adm_transaction_stockAmt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/adm_transaction_userName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="10dp"
+            android:hint="Amount"
+            android:text="Amount"
+            android:drawableStart="@drawable/ic_money"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_nameStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/adm_transaction_stockAmt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="10dp"
+            android:hint="Stock Name"
+            android:text="Stock Name"
+            android:drawableStart="@drawable/ic_stocks"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_stockType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/adm_transaction_nameStock"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="10dp"
+            android:hint="Sold/Purchased"
+            android:text="Purchased or Sold"
+            android:drawableStart="@drawable/ic_stocks"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/adm_transaction_stockType"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="10dp"
+            android:hint="dd-mm-yyyy"
+            android:text="Date of Transaction"
+            android:drawableStart="@drawable/ic_date"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/adm_transaction_date"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="10dp"
+            android:hint="Time"
+            android:text="Time of Transaction"
+            android:drawableStart="@drawable/ic_time"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_noOfStocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="100sp"
+            android:text="1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/adm_transaction_purchasedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Purchased at:"
+            />
+
+        <ImageView
+            android:id="@+id/adm_transaction_isApproved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_check_circle"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

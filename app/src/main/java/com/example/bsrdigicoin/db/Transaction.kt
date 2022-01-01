@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class Transaction(
     @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "transactionId")
     val transactionId:Int,
+    @ColumnInfo(name = "user_name")
+    val userName: String,
     @ColumnInfo(name = "stock_name")
     val stockName: String,
     @ColumnInfo(name = "no_of_stock")
@@ -23,5 +25,7 @@ data class Transaction(
     @ColumnInfo(name="user_id")
     val UserId:Int,
     @ColumnInfo(name="stock_transaction_type")
-    val stockTransactionType:String
+    val stockTransactionType:String,
+    @ColumnInfo(name="status")
+    val status:Char
 )

@@ -11,9 +11,6 @@ import androidx.room.Room
 import com.example.bsrdigicoin.databinding.FragmentUserRegistrationBinding
 import com.example.bsrdigicoin.db.TransactionDatabase
 import com.example.bsrdigicoin.db.User
-import com.wajahatkarim3.easyvalidation.core.collection_ktx.validEmailList
-import com.wajahatkarim3.easyvalidation.core.view_ktx.noNumbers
-import com.wajahatkarim3.easyvalidation.core.view_ktx.noSpecialCharacters
 
 
 class UserRegistrationFragment : Fragment() {
@@ -51,10 +48,10 @@ class UserRegistrationFragment : Fragment() {
             else if ( binding.etRegisterEmail.editText?.text.toString().isEmpty()){
                 binding.etRegisterEmail.error="Email not valid"
             }
-            else if(userFullName.isEmpty() || !userFullName.noNumbers()){
+            else if(userFullName.isEmpty()){
                 binding.etRegisterFullName.error="Name not valid"
             }
-            else if(username.isEmpty() || !userFullName.noSpecialCharacters()){
+            else if(username.isEmpty()){
                 binding.etRegisterUsername.error="username not valid"
             }
             else{

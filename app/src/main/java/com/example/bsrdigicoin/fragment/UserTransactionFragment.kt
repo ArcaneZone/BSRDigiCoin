@@ -40,7 +40,7 @@ class UserTransactionFragment : Fragment() {
         ).allowMainThreadQueries().build()
         val transactionDao = db.transactionDao()
 
-        val transactionList = transactionDao.getAll()
+        val transactionList = transactionDao.getTransactionbyId(1)
 
         layoutManager = LinearLayoutManager(activity)
 
