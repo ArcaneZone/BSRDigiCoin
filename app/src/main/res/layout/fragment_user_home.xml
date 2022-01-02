@@ -7,25 +7,179 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.UserHomeFragment">
 
+        <TextView
+            android:id="@+id/heading_userHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Home"
+            android:textSize="30sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.button.MaterialButton
-                style="?attr/materialButtonOutlinedStyle"
-                android:id="@+id/btn_stock_sell_buy"
-                android:layout_width="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_height="62dp"
-                app:iconGravity="textStart"
-                app:iconPadding="20dp"
-                app:strokeColor="@color/black"
-                android:text="BUY/SELL"
-                app:icon="@drawable/ic_sell"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/user_cardview"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heading_userHome">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/user_fullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name :"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/user_fullnameInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nitesh Kumar"
+                    android:layout_margin="5dp"
+                    app:layout_constraintLeft_toRightOf="@+id/user_fullname"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_userid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User ID :"
+                    android:layout_margin="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_fullname"
+                    />
+
+                <TextView
+                    android:id="@+id/user_useridInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="\@niteshk1208"
+                    app:layout_constraintLeft_toRightOf="@+id/user_userid"
+                    app:layout_constraintTop_toBottomOf="@+id/user_fullnameInput"
+                    />
+
+                <TextView
+                    android:id="@+id/user_stocksaquired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Stocks Aquired :"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_userid"
+                    />
+
+                <TextView
+                    android:id="@+id/user_stocksaquiredInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="69"
+                    app:layout_constraintTop_toBottomOf="@id/user_useridInput"
+                    app:layout_constraintLeft_toRightOf="@id/user_stocksaquired"
+                    />
+
+                <TextView
+                    android:id="@+id/user_netprofit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Net Profit :"
+                    app:layout_constraintTop_toBottomOf="@id/user_stocksaquired"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/user_netprofitInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="+103%"
+                    app:layout_constraintTop_toBottomOf="@id/user_stocksaquiredInput"
+                    app:layout_constraintLeft_toRightOf="@id/user_netprofit"
+                    />
+
+                <TextView
+                    android:id="@+id/user_currentvalueinvested"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Current Invested :"
+                    app:layout_constraintTop_toBottomOf="@id/user_netprofit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/user_currentvalueinvestedInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="$6900"
+                    app:layout_constraintTop_toBottomOf="@id/user_netprofitInput"
+                    app:layout_constraintLeft_toRightOf="@id/user_currentvalueinvested"
+                    />
+
+                <TextView
+                    android:id="@+id/user_totalvalueinvested"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Total Invested :"
+                    app:layout_constraintTop_toBottomOf="@id/user_currentvalueinvested"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/user_totalvalueinvestedInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="$33000"
+                    app:layout_constraintTop_toBottomOf="@id/user_currentvalueinvestedInput"
+                    app:layout_constraintLeft_toRightOf="@id/user_totalvalueinvested"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/user_cardview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="5dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/recent_transaction_single_item"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_stock_sell_buy"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="BUY/SELL"
+            app:icon="@drawable/ic_sell"
+            app:iconGravity="textStart"
+            app:iconPadding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:strokeColor="@color/black" />
 
 
-
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
