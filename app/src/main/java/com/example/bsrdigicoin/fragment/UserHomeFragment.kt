@@ -41,10 +41,9 @@ class UserHomeFragment : Fragment() {
             dialog.show()
             transactionDao.insert(
                 Transaction(
-                    0,
+                    0,"ArcaneOP",
                     "Bitcoin",
-                    "2",
-                    2 ,
+                    2,
                     "21:12:2021",
                     "21:21",
                     1000.00,
