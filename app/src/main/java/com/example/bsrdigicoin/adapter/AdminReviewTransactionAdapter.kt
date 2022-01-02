@@ -14,7 +14,7 @@ import com.example.bsrdigicoin.db.Transaction
 import com.example.bsrdigicoin.db.TransactionDatabase
 import com.google.android.material.button.MaterialButton
 
-class AdminReviewTransactionAdapter(val context: Context, private var itemList : List<Transaction>):
+class AdminReviewTransactionAdapter(val context: Context, private var itemList : MutableList<Transaction>):
     RecyclerView.Adapter<AdminReviewTransactionAdapter.ItemViewHolder>(){
     var countryFilterList = listOf<com.example.bsrdigicoin.db.Transaction>()
     init {
@@ -59,21 +59,26 @@ class AdminReviewTransactionAdapter(val context: Context, private var itemList :
 
         holder.btnApprove.setOnClickListener {
             transactionDao.approveStatus(transaction.transactionId)
-            //holder.btnApprove.visibility = View.VISIBLE
-            //holder.btnDisapprove.visibility = View.VISIBLE
+            itemList.removeAt(holder.adapterPosition)
+            notifyItemRemoved(holder.adapterPosition)
         }
         holder.btnDisapprove.setOnClickListener {
             transactionDao.disapproveStatus(transaction.transactionId)
+            itemList.removeAt(holder.adapterPosition)
+            notifyItemRemoved(holder.adapterPosition)
+
         }
         if(transaction.status=="A") {
-            //        holder.btnApprove.setColorFilter(Color.argb(150,200,200,200))
+            //holder.btnApprove.setColorFilter(Color.argb(150,200,200,200))
             holder.btnApprove.visibility = View.VISIBLE
             holder.btnDisapprove.visibility = View.INVISIBLE
+
         }
         if(transaction.status=="D") {
             //holder.btnApprove.setColorFilter(Color.argb(150, 200, 200, 200))
             holder.btnApprove.visibility = View.INVISIBLE
             holder.btnDisapprove.visibility = View.VISIBLE
+
         }
     }
 

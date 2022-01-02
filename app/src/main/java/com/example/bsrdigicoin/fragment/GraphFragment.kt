@@ -78,8 +78,6 @@ class GraphFragment : Fragment() {
                 mSeries1.appendData(datapointNow,true,15)
                 max=datapointNow.y
                 mHandler.postDelayed(this, 1000)
-                graph.viewport.setMaxX(graph2LastXValue)
-                graph.viewport.setMinX(graph2LastXValue-15)
             }
         }
         mHandler.postDelayed(mTimer1, 1000)

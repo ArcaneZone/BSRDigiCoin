@@ -1,11 +1,12 @@
 package com.example.bsrdigicoin.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 interface TransactionDao {
     @Query("SELECT * FROM transaction_table")
-    fun getAll(): List<Transaction>
+    fun getAll(): LiveData<List<Transaction>>
 
     @Insert
      fun insert(transaction: Transaction)
@@ -24,4 +25,7 @@ interface TransactionDao {
 
     @Query("SELECT * FROM transaction_table order by stock_date,stock_time LIMIT 3")
     fun getLastest3():List<Transaction>
+
+    @Query("SELECT * FROM transaction_table where status='F'")
+    fun getAllForReview(): LiveData<MutableList<Transaction>>
 }

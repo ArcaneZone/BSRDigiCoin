@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -13,12 +15,14 @@ import com.example.bsrdigicoin.R
 import com.example.bsrdigicoin.adapter.AdminReviewTransactionAdapter
 import com.example.bsrdigicoin.databinding.FragmentReviewTransactionBinding
 import com.example.bsrdigicoin.db.TransactionDatabase
+import com.example.bsrdigicoin.viewmodel.AdminTransactionViewModel
+import com.example.bsrdigicoin.viewmodel.AdminTransactionViewModelFactory
 
 class ReviewTransactionFragment : Fragment() {
 
     private lateinit var binding: FragmentReviewTransactionBinding
     private lateinit var layoutManager: RecyclerView.LayoutManager
-    private lateinit var dashboardAdapter: AdminReviewTransactionAdapter
+    private lateinit var model: AdminTransactionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,22 +34,18 @@ class ReviewTransactionFragment : Fragment() {
             container,
             false
         )
+        val modelfactory=AdminTransactionViewModelFactory(requireContext());
 
-        val db = Room.databaseBuilder(
-            requireContext(),
-            TransactionDatabase::class.java, "transaction_database"
-        ).allowMainThreadQueries().build()
+        model = ViewModelProvider(this,modelfactory)[AdminTransactionViewModel::class.java]
 
-        val transactionDao = db.transactionDao()
         layoutManager = LinearLayoutManager(activity)
-        val transactionList = transactionDao.getAll()
-
-        dashboardAdapter = AdminReviewTransactionAdapter(
+        model.TransactionForReview.observe(viewLifecycleOwner, Observer {
+            binding.recyclerViewUserTransaction.adapter  = AdminReviewTransactionAdapter(
             requireContext(),
-            transactionList,
+            it,
         )
+        })
 
-        binding.recyclerViewUserTransaction.adapter = dashboardAdapter
         binding.recyclerViewUserTransaction.layoutManager = layoutManager
 
         return binding.root
