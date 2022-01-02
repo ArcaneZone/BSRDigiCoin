@@ -2,22 +2,20 @@ package com.example.bsrdigicoin.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.bsrdigicoin.R
 import com.example.bsrdigicoin.db.Transaction
 import com.example.bsrdigicoin.db.TransactionDatabase
+import com.google.android.material.button.MaterialButton
 
-class AdminTransactionDashboardAdapter(val context: Context, private var itemList : List<Transaction>):
-    RecyclerView.Adapter<AdminTransactionDashboardAdapter.ItemViewHolder>(){
+class AdminReviewTransactionAdapter(val context: Context, private var itemList : List<Transaction>):
+    RecyclerView.Adapter<AdminReviewTransactionAdapter.ItemViewHolder>(){
     var countryFilterList = listOf<com.example.bsrdigicoin.db.Transaction>()
     init {
         countryFilterList = itemList
@@ -36,11 +34,13 @@ class AdminTransactionDashboardAdapter(val context: Context, private var itemLis
         val stockTime: TextView =view.findViewById(R.id.adm_transaction_time)
         val stockType: TextView =view.findViewById(R.id.adm_transaction_stockType)
         val stockPrice: TextView =view.findViewById(R.id.adm_transaction_purchasedAt)
+        val btnApprove: MaterialButton = view.findViewById(R.id.btn_transaction_isApproved)
+        val btnDisapprove: MaterialButton = view.findViewById(R.id.btn_transaction_isNotApproved)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.admin_transaction_single, parent, false)
+            .inflate(R.layout.review_transaction_single, parent, false)
 
         return ItemViewHolder(view)
     }
@@ -57,6 +57,24 @@ class AdminTransactionDashboardAdapter(val context: Context, private var itemLis
         holder.stockType.text=transaction.status.toString()
         holder.stockPrice.text="${transaction.stockTotalPrice}(${transaction.stockSinglePrice})"
 
+        holder.btnApprove.setOnClickListener {
+            transactionDao.approveStatus(transaction.transactionId)
+            //holder.btnApprove.visibility = View.VISIBLE
+            //holder.btnDisapprove.visibility = View.VISIBLE
+        }
+        holder.btnDisapprove.setOnClickListener {
+            transactionDao.disapproveStatus(transaction.transactionId)
+        }
+        if(transaction.status=="A") {
+            //        holder.btnApprove.setColorFilter(Color.argb(150,200,200,200))
+            holder.btnApprove.visibility = View.VISIBLE
+            holder.btnDisapprove.visibility = View.INVISIBLE
+        }
+        if(transaction.status=="D") {
+            //holder.btnApprove.setColorFilter(Color.argb(150, 200, 200, 200))
+            holder.btnApprove.visibility = View.INVISIBLE
+            holder.btnDisapprove.visibility = View.VISIBLE
+        }
     }
 
     fun filterList(filteredList: ArrayList<com.example.bsrdigicoin.db.Transaction>) {

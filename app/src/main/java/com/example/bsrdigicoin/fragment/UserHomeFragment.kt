@@ -43,13 +43,15 @@ class UserHomeFragment : Fragment() {
                 Transaction(
                     0,
                     "Bitcoin",
-                    2,
+                    "2",
+                    2 ,
                     "21:12:2021",
                     "21:21",
                     1000.00,
                     2000.00,
                     121,
-                    "Buy"
+                    "Buy",
+                    "F"
                 )
             )
 

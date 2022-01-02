@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.5"
+        android:layout_margin="2dp"
+        android:orientation="vertical"
+        android:background="@drawable/background_border"
+        android:weightSum="3">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/txt_stock_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="@string/decoin_stock"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="@string/decoin_stock"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            tools:ignore="NestedWeights" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txt_stock_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="25-DEC-2021"
+                android:drawableStart="@drawable/ic_date"
+                android:paddingStart="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_stock_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:text="09:21PM"
+                android:layout_marginStart="2dp"
+                android:drawableStart="@drawable/ic_time"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txt_stock_transaction_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:text="BUY"
+                android:textSize="18dp"
+                android:drawableStart="@drawable/ic_transaction"
+                android:layout_marginStart="2dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/txt_stock_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_money"
+                android:paddingStart="20dp"
+                android:layout_marginStart="2dp"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:text="4000(2000)" />
+        </LinearLayout>
+
+    </LinearLayout>

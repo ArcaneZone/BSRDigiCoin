@@ -1,9 +1,6 @@
 package com.example.bsrdigicoin.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface TransactionDao {
@@ -16,4 +13,15 @@ interface TransactionDao {
     @Delete
     fun delete(transaction: Transaction)
 
+    @Query("UPDATE transaction_table SET status='A' where transactionId=:transactionId")
+    fun approveStatus(transactionId: Int)
+
+    @Query("UPDATE transaction_table SET status='D' where transactionId=:transactionId")
+    fun disapproveStatus(transactionId: Int)
+
+    @Query("SELECT COUNT(*) FROM transaction_table where status='F'")
+    fun getReviewToCheck(): Int
+
+    @Query("SELECT * FROM transaction_table order by stock_date,stock_time LIMIT 3")
+    fun getLastest3():List<Transaction>
 }

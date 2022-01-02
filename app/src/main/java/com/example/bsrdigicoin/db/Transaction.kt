@@ -27,5 +27,5 @@ data class Transaction(
     @ColumnInfo(name="stock_transaction_type")
     val stockTransactionType:String,
     @ColumnInfo(name="status")
-    val status:Char
+    val status:String
 )

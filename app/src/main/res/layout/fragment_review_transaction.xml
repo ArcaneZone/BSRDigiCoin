@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ReviewTransactionFragment">
+        tools:context=".fragment.ReviewTransactionFragment">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="20dp"
-            tools:listitem="@layout/admin_transaction_single" />
+            tools:listitem="@layout/review_transaction_single" />
 
     </LinearLayout>
 </layout>

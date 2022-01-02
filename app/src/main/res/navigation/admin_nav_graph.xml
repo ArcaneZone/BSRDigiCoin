@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_graph" />
     <fragment
         android:id="@+id/reviewTransactionFragment"
-        android:name="com.example.bsrdigicoin.ReviewTransactionFragment"
+        android:name="com.example.bsrdigicoin.fragment.ReviewTransactionFragment"
         android:label="fragment_review_transaction"
         tools:layout="@layout/fragment_review_transaction" />
 </navigation>
