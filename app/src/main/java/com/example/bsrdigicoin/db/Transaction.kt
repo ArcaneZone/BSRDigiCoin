@@ -3,6 +3,10 @@ package com.example.bsrdigicoin.db
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
+import java.sql.Date
+import java.time.LocalDate
+import java.time.LocalTime
 
 @Entity(tableName = "transaction_table")
 data class Transaction(

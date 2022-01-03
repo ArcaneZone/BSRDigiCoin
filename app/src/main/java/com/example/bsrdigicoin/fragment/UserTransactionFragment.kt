@@ -27,7 +27,6 @@ class UserTransactionFragment : Fragment() {
     private lateinit var binding: FragmentUserTransactionBinding
 
     private lateinit var layoutManager: RecyclerView.LayoutManager
-    private lateinit var dashboardAdapter: TransactionDashboardAdapter
     private lateinit var model: AdminTransactionViewModel
 
 
@@ -47,13 +46,12 @@ class UserTransactionFragment : Fragment() {
 
         layoutManager = LinearLayoutManager(activity)
         model.allTransaction.observe(viewLifecycleOwner, Observer {
-            dashboardAdapter = TransactionDashboardAdapter(
+            binding.recyclerViewUserTransaction.adapter  = TransactionDashboardAdapter(
                 requireContext(),
                 it,
             )
         })
 
-        binding.recyclerViewUserTransaction.adapter = dashboardAdapter
         binding.recyclerViewUserTransaction.layoutManager = layoutManager
 
         return binding.root

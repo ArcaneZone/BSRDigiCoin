@@ -30,7 +30,7 @@
                     style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="0dp"
                     app:icon="@drawable/ic_buy"
-                    android:id="@+id/toggle_btn_user"
+                    android:id="@+id/toggle_btn_buy"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     app:iconGravity="textStart"
@@ -40,7 +40,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/materialButtonOutlinedStyle"
-                    android:id="@+id/toggle_btn_admin"
+                    android:id="@+id/toggle_btn_sell"
                     app:icon="@drawable/ic_sell"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -89,6 +89,7 @@
                     android:text="+" />
             </LinearLayout>
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:text="Confirm"

@@ -32,5 +32,9 @@
     <fragment
         android:id="@+id/buySellDialogFragment"
         android:name="com.example.bsrdigicoin.fragment.BuySellDialogFragment"
-        android:label="BuySellDialogFragment" />
+        android:label="BuySellDialogFragment" >
+        <action
+            android:id="@+id/action_buySellDialogFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+    </fragment>
 </navigation>

@@ -17,7 +17,7 @@ interface TransactionDao {
     @Query("UPDATE transaction_table SET status='A' where transactionId=:transactionId")
     fun approveStatus(transactionId: Int)
 
-    @Query("UPDATE transaction_table SET status='D' where transactionId=:transactionId")
+    @Query("DELETE FROM TRANSACTION_TABLE WHERE transactionId=:transactionId")
     fun disapproveStatus(transactionId: Int)
 
     @Query("SELECT COUNT(*) FROM transaction_table where status='F'")
@@ -28,4 +28,11 @@ interface TransactionDao {
 
     @Query("SELECT * FROM transaction_table where status='F'")
     fun getAllForReview(): LiveData<MutableList<Transaction>>
+
+    @Query("SELECT * FROM transaction_table where status ='A' AND user_id=:userid")
+    fun getTransactionsById(userid:Int): LiveData<MutableList<Transaction>>
+
+    @Query("SELECT * FROM transaction_table where status ='F' AND user_id=:userid")
+    fun orderInProgress(userid:Int): LiveData<MutableList<Transaction>>
+
 }
