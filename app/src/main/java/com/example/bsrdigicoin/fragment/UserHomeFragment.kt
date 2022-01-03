@@ -1,21 +1,15 @@
 package com.example.bsrdigicoin.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.example.bsrdigicoin.R
-import com.example.bsrdigicoin.databinding.FragmentBuySellDialogBinding
 import com.example.bsrdigicoin.databinding.FragmentUserHomeBinding
-import com.example.bsrdigicoin.db.Transaction
-import com.example.bsrdigicoin.db.TransactionDatabase
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class UserHomeFragment : Fragment() {
@@ -27,11 +21,11 @@ class UserHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_home, container, false)
-        val db = Room.databaseBuilder(
-            requireContext(),
-            TransactionDatabase::class.java, "transaction_database"
-        ).allowMainThreadQueries().build()
-        val transactionDao = db.transactionDao()
+        val prefs = context?.getSharedPreferences(
+            "sharedpreference", Context.MODE_PRIVATE
+        )
+        val userid= prefs?.getInt("userid",-1)
+        println("userid $userid" )
 
 
 
@@ -45,3 +39,4 @@ class UserHomeFragment : Fragment() {
 
 
 }
+

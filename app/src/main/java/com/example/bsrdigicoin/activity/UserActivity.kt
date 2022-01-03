@@ -2,18 +2,16 @@ package com.example.bsrdigicoin.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
+
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.navArgs
+
 import androidx.navigation.ui.NavigationUI
 import com.example.bsrdigicoin.R
-import com.example.bsrdigicoin.fragment.LoginFragmentArgs
-import com.example.bsrdigicoin.fragment.UserHomeFragment
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class UserActivity : AppCompatActivity() {
-  val args: LoginFragmentArgs by navArgs()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
@@ -26,12 +24,5 @@ class UserActivity : AppCompatActivity() {
 
 
 
-        val userid=args.myArg
-        println("userid act $userid")
-        val  bundle = Bundle()
-        bundle.putInt("userid",userid)
-        val userHomeFragment = UserHomeFragment()
-        userHomeFragment.arguments=bundle
-        navController.setGraph(navController.graph,bundle)
     }
 }

@@ -13,12 +13,17 @@
         <action
             android:id="@+id/action_userHomeFragment_to_buySellDialogFragment"
             app:destination="@id/buySellDialogFragment" />
+        <argument
+            android:name="userIdArgs"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/userTransactionFragment"
         android:name="com.example.bsrdigicoin.fragment.UserTransactionFragment"
         android:label="fragment_user_transaction"
-        tools:layout="@layout/fragment_user_transaction" />
+        tools:layout="@layout/fragment_user_transaction" >
+
+    </fragment>
     <fragment
         android:id="@+id/graphFragment"
         android:name="com.example.bsrdigicoin.fragment.GraphFragment"
