@@ -43,12 +43,12 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
 
         var stockCount:Int = 0
         binding.increase.setOnClickListener {
-            stockCount=stockCount+1
+            stockCount += 1
             binding.integerNumber.text=stockCount.toString()
             Toast.makeText(requireContext(),"$stockCount",Toast.LENGTH_SHORT).show()
         }
         binding.decrease.setOnClickListener {
-            stockCount=stockCount-1
+            stockCount -= 1
             binding.integerNumber.text=stockCount.toString()
             Toast.makeText(requireContext(),"$stockCount",Toast.LENGTH_SHORT).show()
         }
@@ -56,6 +56,7 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
         binding.btnConfirmTransaction.setOnClickListener{
             if (binding.toggleButtonGroup.checkedButtonId==R.id.toggle_btn_buy){
                 if (user != null) {
+                    db.userDao().updateStockCount(stockCount,userid)
                     transactionDao.insert(
                         Transaction(
                             0,
@@ -74,6 +75,7 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
             }
             else if (binding.toggleButtonGroup.checkedButtonId==R.id.toggle_btn_sell){
                 if (user != null) {
+                    db.userDao().updateStockCount(-stockCount,userid)
                     transactionDao.insert(
                         Transaction(
                             0,

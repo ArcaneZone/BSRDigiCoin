@@ -20,4 +20,6 @@ interface UserDao {
     fun ifUserExist(username:String,password:String) : Boolean
     @Query("SELECT * FROM user_table WHERE username=:username and userPassword=:password")
     fun getUserByUserName(username:String,password:String): User?
+    @Query("Update user_table set userTotalCount=userTotalCount + :stockCount where userId=:userid")
+    fun updateStockCount(stockCount:Int,userid:Int)
 }

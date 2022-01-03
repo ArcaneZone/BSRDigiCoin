@@ -17,9 +17,9 @@ data class User(
     @ColumnInfo(name = "userPassword")
     val userPassWord: String,
     @ColumnInfo(name = "userBalance")
-    val TotalBalance: Double,
+    val TotalValue: Double,
     @ColumnInfo(name = "userTotalValueInvested")
     val userTotalValueInvested: Double,
-    @ColumnInfo(name = "userTotalValue")
-    val userTotalValue: Double
+    @ColumnInfo(name = "userTotalCount")
+    val userTotalCount: Int
 )

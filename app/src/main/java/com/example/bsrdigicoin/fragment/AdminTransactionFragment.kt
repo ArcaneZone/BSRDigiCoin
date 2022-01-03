@@ -1,23 +1,18 @@
 package com.example.bsrdigicoin.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.example.bsrdigicoin.R
-import com.example.bsrdigicoin.adapter.AdminReviewTransactionAdapter
 import com.example.bsrdigicoin.adapter.AdminTransactionDashboardAdapter
-import com.example.bsrdigicoin.adapter.TransactionDashboardAdapter
 import com.example.bsrdigicoin.databinding.FragmentAdminTransactionBinding
-import com.example.bsrdigicoin.databinding.FragmentUserTransactionBinding
-import com.example.bsrdigicoin.db.TransactionDatabase
 import com.example.bsrdigicoin.viewmodel.AdminTransactionViewModel
 import com.example.bsrdigicoin.viewmodel.AdminTransactionViewModelFactory
 
@@ -32,13 +27,13 @@ class AdminTransactionFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_admin_transaction,container,false)
 
-        val modelfactory= AdminTransactionViewModelFactory(requireContext());
+        val modelfactory= AdminTransactionViewModelFactory(requireContext())
 
         model = ViewModelProvider(this,modelfactory)[AdminTransactionViewModel::class.java]
 
         layoutManager = LinearLayoutManager(activity)
 
-        model.allTransaction.observe(viewLifecycleOwner, Observer {
+        model.adminApprovedTransaction.observe(viewLifecycleOwner, Observer {
             binding.recyclerViewAdminTransaction.adapter  = AdminTransactionDashboardAdapter(
                 requireContext(),
                 it,

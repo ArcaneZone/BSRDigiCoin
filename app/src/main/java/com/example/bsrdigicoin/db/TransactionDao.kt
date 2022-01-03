@@ -35,4 +35,8 @@ interface TransactionDao {
     @Query("SELECT * FROM transaction_table where status ='F' AND user_id=:userid")
     fun orderInProgress(userid:Int): LiveData<MutableList<Transaction>>
 
+    @Query("SELECT * FROM transaction_table where status !='F'")
+    fun allapproved(): LiveData<MutableList<Transaction>>
+
+
 }

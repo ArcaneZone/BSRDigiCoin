@@ -17,4 +17,6 @@ class AdminTransactionViewModel(context: Context): ViewModel() {
     internal val allTransaction : LiveData<List<Transaction>> = db.transactionDao().getAll()
     internal val TransactionForReview : LiveData<MutableList<Transaction>> = db.transactionDao().getAllForReview()
     internal val userTransactionBooking : LiveData<MutableList<Transaction>> = db.transactionDao().orderInProgress(userid)
+    internal val adminApprovedTransaction : LiveData<MutableList<Transaction>> = db.transactionDao().allapproved()
+
 }
