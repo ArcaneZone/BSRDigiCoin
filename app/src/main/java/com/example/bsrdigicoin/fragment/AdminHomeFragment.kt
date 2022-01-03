@@ -6,12 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.bsrdigicoin.R
+import com.example.bsrdigicoin.activity.AdminActivity
 import com.example.bsrdigicoin.adapter.AdminTransactionDashboardAdapter
 import com.example.bsrdigicoin.adapter.RecentTransactionAdapter
 import com.example.bsrdigicoin.adapter.TransactionDashboardAdapter
@@ -27,6 +30,9 @@ class AdminHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_admin_home,container,false)
+
+        //(activity as AdminActivity).supportActionBar?.title = "Admin Home"
+
 
         val db = Room.databaseBuilder(requireContext(),
             TransactionDatabase::class.java, "transaction_database"
@@ -60,4 +66,5 @@ class AdminHomeFragment : Fragment() {
 
         return binding.root
     }
+
 }

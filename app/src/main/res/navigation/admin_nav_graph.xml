@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/adminHomeFragment"
         android:name="com.example.bsrdigicoin.fragment.AdminHomeFragment"
-        android:label="fragment_admin_home"
-        tools:layout="@layout/fragment_admin_home" >
+        android:label="Admin Home"
+        tools:layout="@layout/fragment_admin_home">
         <action
             android:id="@+id/action_adminHomeFragment_to_reviewTransactionFragment"
             app:destination="@id/reviewTransactionFragment" />
@@ -17,16 +17,16 @@
     <fragment
         android:id="@+id/adminTransactionFragment"
         android:name="com.example.bsrdigicoin.fragment.AdminTransactionFragment"
-        android:label="fragment_admin_transaction"
+        android:label="Admin Transaction"
         tools:layout="@layout/fragment_admin_transaction" />
     <fragment
         android:id="@+id/graphFragment"
         android:name="com.example.bsrdigicoin.fragment.GraphFragment"
-        android:label="fragment_graph"
+        android:label="Graph"
         tools:layout="@layout/fragment_graph" />
     <fragment
         android:id="@+id/reviewTransactionFragment"
         android:name="com.example.bsrdigicoin.fragment.ReviewTransactionFragment"
-        android:label="fragment_review_transaction"
+        android:label="Review Transaction"
         tools:layout="@layout/fragment_review_transaction" />
 </navigation>
