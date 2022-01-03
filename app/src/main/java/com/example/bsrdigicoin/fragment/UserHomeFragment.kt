@@ -44,13 +44,9 @@ class UserHomeFragment : Fragment() {
 
         binding.recyclerviewUserOrders.layoutManager = layoutManager
 
-
-
-
         binding.btnStockSellBuy.setOnClickListener {
             findNavController().navigate(R.id.action_userHomeFragment_to_buySellDialogFragment)
         }
-
 
         return binding.root
     }
