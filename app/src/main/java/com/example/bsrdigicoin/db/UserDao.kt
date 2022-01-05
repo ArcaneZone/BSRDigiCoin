@@ -15,7 +15,7 @@ interface UserDao {
     fun getAllUsers(): LiveData<List<User>>
 
     @Query("SELECT * FROM user_table WHERE userId=:userid")
-    fun getUserById(userid:Int): User?
+    fun getUserById(userid:Int): LiveData<User>
     @Query("SELECT EXISTS(SELECT * FROM user_table WHERE username=:username and userPassword=:password)")
     fun ifUserExist(username:String,password:String) : Boolean
     @Query("SELECT * FROM user_table WHERE username=:username and userPassword=:password")

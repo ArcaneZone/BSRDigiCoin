@@ -15,7 +15,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/user_cardview"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:elevation="20dp"
             android:layout_margin="10dp"
             android:layout_alignParentTop="true"
@@ -38,33 +38,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/user_userid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="User ID :"
-                    android:layout_margin="5dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/user_fullname"
-                    />
-
-                <TextView
                     android:id="@+id/user_useridInput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="User ID :\@niteshk1208"
-                    app:layout_constraintLeft_toRightOf="@+id/user_userid"
-                    app:layout_constraintTop_toBottomOf="@+id/user_fullnameInput"
-                    />
-
-                <TextView
-                    android:id="@+id/user_stocksaquired"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Stocks Aquired :"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/user_userid"
                     />
 
                 <TextView
@@ -72,39 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="69"
-                    app:layout_constraintTop_toBottomOf="@id/user_useridInput"
-                    app:layout_constraintLeft_toRightOf="@id/user_stocksaquired"
-                    />
-
-                <TextView
-                    android:id="@+id/user_netprofit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Net Profit :"
-                    app:layout_constraintTop_toBottomOf="@id/user_stocksaquired"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    />
-
-                <TextView
-                    android:id="@+id/user_netprofitInput"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="+103%"
-                    app:layout_constraintTop_toBottomOf="@id/user_stocksaquiredInput"
-                    app:layout_constraintLeft_toRightOf="@id/user_netprofit"
-                    />
-
-                <TextView
-                    android:id="@+id/user_currentvalueinvested"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Current Invested :"
-                    app:layout_constraintTop_toBottomOf="@id/user_netprofit"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="Stocks Aquired :"
                     />
 
                 <TextView
@@ -112,30 +58,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="$6900"
-                    app:layout_constraintTop_toBottomOf="@id/user_netprofitInput"
-                    app:layout_constraintLeft_toRightOf="@id/user_currentvalueinvested"
+                    android:text="Currently Invested :$6900"
                     />
 
-                <TextView
-                    android:id="@+id/user_totalvalueinvested"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Total Invested :"
-                    app:layout_constraintTop_toBottomOf="@id/user_currentvalueinvested"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    />
-
-                <TextView
-                    android:id="@+id/user_totalvalueinvestedInput"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="$33000"
-                    app:layout_constraintTop_toBottomOf="@id/user_currentvalueinvestedInput"
-                    app:layout_constraintLeft_toRightOf="@id/user_totalvalueinvested"
-                    />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

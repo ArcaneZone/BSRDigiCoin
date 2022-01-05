@@ -18,8 +18,6 @@ data class User(
     val userPassWord: String,
     @ColumnInfo(name = "userBalance")
     val TotalValue: Double,
-    @ColumnInfo(name = "userTotalValueInvested")
-    val userTotalValueInvested: Double,
     @ColumnInfo(name = "userTotalCount")
     val userTotalCount: Int
 )
