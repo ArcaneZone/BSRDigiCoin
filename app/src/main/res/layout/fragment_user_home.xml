@@ -26,12 +26,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:weightSum="4"
                 >
 
                 <TextView
                     android:id="@+id/user_fullnameInput"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Full Name : Nitesh Kumar"
                     android:layout_margin="5dp"
                     app:layout_constraintLeft_toRightOf="@+id/user_fullname"
@@ -39,24 +41,27 @@
 
                 <TextView
                     android:id="@+id/user_useridInput"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:text="User ID :\@niteshk1208"
                     />
 
                 <TextView
                     android:id="@+id/user_stocksaquiredInput"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:text="Stocks Aquired :"
                     />
 
                 <TextView
                     android:id="@+id/user_currentvalueinvestedInput"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:text="Currently Invested :$6900"
                     />

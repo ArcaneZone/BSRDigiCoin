@@ -22,4 +22,8 @@ interface UserDao {
     fun getUserByUserName(username:String,password:String): User?
     @Query("Update user_table set userTotalCount=userTotalCount + :stockCount where userId=:userid")
     fun updateStockCount(stockCount:Int,userid:Int)
+    @Query("Update user_table set userBalance=userBalance + :transactionAmount where userId=:userid")
+    fun updateTotalValue(transactionAmount:Int,userid:Int)
+    @Query("SELECT userTotalCount FROM user_table where userId=:userid")
+    fun getTotalStocks(userid: Int): Int
 }
