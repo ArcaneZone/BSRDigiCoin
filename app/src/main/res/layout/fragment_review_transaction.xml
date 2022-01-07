@@ -9,15 +9,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#2E2D2D"
         android:orientation="vertical"
         tools:context=".fragment.ReviewTransactionFragment">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REVIEW TRANSACTIONS"
+            android:text="Review Transactions"
+            android:fontFamily="@font/freehand_regular"
+            android:textColor="#ebdbb2"
             android:layout_marginTop="35dp"
             android:layout_gravity="center"
-            android:textSize="35sp"
+            android:textSize="45sp"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView

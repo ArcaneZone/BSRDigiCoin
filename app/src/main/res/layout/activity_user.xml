@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:id="@+id/bottom_navigation_user"
+        android:background="#202020"
+        app:itemTextColor="#ebdbb2"
+        app:itemIconTint="#b8bb26"
         android:layout_alignParentBottom="true"
         app:menu="@menu/user_menu"
          />

@@ -8,17 +8,20 @@
     </data>
 
     <RelativeLayout
+        android:background="#2E2D2D"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".fragment.UserHomeFragment">
 
         <com.google.android.material.card.MaterialCardView
+            android:backgroundTint="#458588"
             android:id="@+id/user_cardview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_buy_sell"
             android:elevation="20dp"
-            android:layout_margin="10dp"
             android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="10dp"
             app:cardCornerRadius="20dp"
            >
 
@@ -26,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_margin="10dp"
                 android:weightSum="4"
                 >
 
@@ -35,6 +39,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Full Name : Nitesh Kumar"
+                    android:textSize="20sp"
+                    android:textColor="#ebdbb2"
                     android:layout_margin="5dp"
                     app:layout_constraintLeft_toRightOf="@+id/user_fullname"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -46,6 +52,8 @@
                     android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:text="User ID :\@niteshk1208"
+                    android:textSize="20sp"
+                    android:textColor="#ebdbb2"
                     />
 
                 <TextView
@@ -55,6 +63,8 @@
                     android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:text="Stocks Aquired :"
+                    android:textSize="20sp"
+                    android:textColor="#ebdbb2"
                     />
 
                 <TextView
@@ -62,8 +72,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
                     android:text="Currently Invested :$6900"
+                    android:textSize="20sp"
+                    android:textColor="#ebdbb2"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
                     />
 
 
@@ -89,16 +107,17 @@
                 tools:listitem="@layout/recent_transaction_single_item" />
         </ScrollView>
 
-        <com.google.android.material.button.MaterialButton
+        <android.widget.Button
             android:id="@+id/btn_stock_sell_buy"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:text="BUY/SELL"
-            app:icon="@drawable/ic_sell"
-            app:iconGravity="textStart"
-            app:iconPadding="20dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/button_buy_sell"
+            android:text="Buy/Sell"
+            android:textAllCaps="false"
+            android:textColor="#ebdbb2"
             app:strokeColor="@color/black" />
 
 

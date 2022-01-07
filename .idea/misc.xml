@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background_border.xml" value="0.36302083333333335" />
+        <entry key="app/src/main/res/drawable/button_buy_sell.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/drawable/button_style.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/drawable/envelop_corners.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/drawable/only_bottom_left.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/drawable/only_bottom_right.xml" value="0.35520833333333335" />
@@ -13,14 +15,14 @@
         <entry key="app/src/main/res/drawable/straight_corners.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/activity_admin.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2296875" />
-        <entry key="app/src/main/res/layout/activity_user.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.5531011045029737" />
         <entry key="app/src/main/res/layout/admin_transaction_single.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_admin_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_admin_transaction.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/fragment_buy_sell_dialog.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_buy_sell_dialog2.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/fragment_graph.xml" value="0.346875" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2296875" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_review_transaction.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/layout/fragment_user_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_user_registration.xml" value="0.3385416666666667" />

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:background="#2E2D2D"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -33,6 +34,10 @@
                     android:id="@+id/toggle_btn_buy"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:textColor="#ebdbb2"
+                    app:iconTint="#b8bb26"
+                    app:strokeColor="#ebdbb2"
+                    app:rippleColor="#fb4934"
                     app:iconGravity="textStart"
                     app:iconPadding="20dp"
                     android:elevation="1dp"
@@ -45,6 +50,10 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:textColor="#ebdbb2"
+                    app:iconTint="#b8bb26"
+                    app:strokeColor="#ebdbb2"
+                    app:rippleColor="#fb4934"
                     app:iconGravity="textStart"
                     app:iconPadding="20dp"
                     android:elevation="1dp"
@@ -61,11 +70,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Number of stock :"
+                    android:textColor="#ebdbb2"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/integer_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#ebdbb2"
                     android:text="0"
                     android:layout_marginLeft="20dp"
                     android:textStyle="bold"
@@ -75,6 +86,7 @@
                     android:id="@+id/decrease"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#ebdbb2"
                     android:layout_marginStart="30dp"
                     android:onClick="decreaseInteger"
                     style="?attr/materialButtonOutlinedStyle"
@@ -85,6 +97,7 @@
                     android:id="@+id/increase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#ebdbb2"
                     android:onClick="increaseInteger"
                     android:text="+" />
             </LinearLayout>
@@ -99,11 +112,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Value of 1 Stock :"
+                android:textColor="#ebdbb2"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1000"
+                android:textColor="#ebdbb2"
                 android:layout_marginLeft="20dp"
                 android:textStyle="bold"
                 android:textSize="25sp" />
@@ -119,21 +134,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total value of Stocks"
+                    android:textColor="#ebdbb2"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/valueOfTotalStocks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
+                    android:textColor="#ebdbb2"
                     android:layout_marginLeft="20dp"
                     android:textStyle="bold"
                     android:textSize="25sp" />
             </LinearLayout>
-            <com.google.android.material.button.MaterialButton
+            <android.widget.Button
                 android:id="@+id/btn_confirm_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
+                android:background="@drawable/button_style"
                 android:text="Confirm"
+                android:textColor="#ebdbb2"
                 android:layout_margin="15dp"
                 style="?attr/materialButtonOutlinedStyle"/>
 
