@@ -29,7 +29,7 @@
         <entry key="app/src/main/res/layout/fragment_user_registration.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/layout/fragment_user_transaction.xml" value="0.33" />
         <entry key="app/src/main/res/layout/orders_single_item.xml" value="0.3390625" />
-        <entry key="app/src/main/res/layout/recent_transaction_single_item.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/recent_transaction_single_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/review_transaction_single.xml" value="0.4079601990049751" />
         <entry key="app/src/main/res/layout/user_transaction_single.xml" value="0.3428442028985507" />
         <entry key="app/src/main/res/menu/admin_menu.xml" value="0.346875" />

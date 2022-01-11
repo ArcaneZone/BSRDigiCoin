@@ -6,9 +6,12 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.bsrdigicoin.R
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_admin.*
+import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {
 
@@ -21,8 +24,5 @@ class UserActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_user)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
-
-
-
     }
 }

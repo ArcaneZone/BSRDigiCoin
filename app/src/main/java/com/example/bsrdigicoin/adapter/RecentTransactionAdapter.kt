@@ -31,6 +31,7 @@ class RecentTransactionAdapter(val context: Context, private var itemList : List
         val stockTime: TextView =view.findViewById(R.id.txt_stock_time)
         val stockType: TextView =view.findViewById(R.id.txt_stock_transaction_type)
         val stockPrice: TextView =view.findViewById(R.id.txt_stock_price)
+        val noOfStock: TextView = view.findViewById(R.id.txt_no_of_stock)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -47,8 +48,9 @@ class RecentTransactionAdapter(val context: Context, private var itemList : List
         holder.userName.text=transaction.userName
         holder.stockDate.text=transaction.stockDate
         holder.stockTime.text=transaction.stockTime
-        holder.stockType.text=transaction.status.toString()
+        holder.stockType.text=transaction.stockTransactionType
         holder.stockPrice.text="${transaction.stockTotalPrice}(${transaction.stockSinglePrice})"
+        holder.noOfStock.text=transaction.noOfStock.toString()
     }
 
     fun filterList(filteredList: ArrayList<com.example.bsrdigicoin.db.Transaction>) {

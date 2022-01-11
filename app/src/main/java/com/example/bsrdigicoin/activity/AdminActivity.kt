@@ -23,8 +23,5 @@ class AdminActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_admin)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
-
-        setSupportActionBar(topBarAdminActivity)
-        setupActionBarWithNavController(navController)
     }
 }

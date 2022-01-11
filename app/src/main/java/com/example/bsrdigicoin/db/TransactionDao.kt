@@ -23,7 +23,7 @@ interface TransactionDao {
     @Query("SELECT COUNT(*) FROM transaction_table where status='F'")
     fun getReviewToCheck(): Int
 
-    @Query("SELECT * FROM transaction_table order by stock_date,stock_time LIMIT 3")
+    @Query("SELECT * FROM transaction_table where status='A' order by transactionId desc LIMIT 3")
     fun getLastest3():List<Transaction>
 
     @Query("SELECT * FROM transaction_table where status='F'")

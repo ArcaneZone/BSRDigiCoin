@@ -52,7 +52,7 @@ class AdminTransactionDashboardAdapter(val context: Context, private var itemLis
         holder.userName.text=transaction.userName
         holder.stockDate.text=transaction.stockDate
         holder.stockTime.text=transaction.stockTime
-        holder.stockType.text=transaction.status.toString()
+        holder.stockType.text=transaction.stockTransactionType
         holder.stockPrice.text="${transaction.stockTotalPrice}(${transaction.stockSinglePrice})"
 
     }

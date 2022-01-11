@@ -53,11 +53,13 @@ class UserHomeFragment : Fragment() {
         binding.recyclerviewUserOrders.layoutManager = layoutManager
 
         binding.btnStockSellBuy.setOnClickListener {
-            findNavController().navigate(R.id.action_userHomeFragment_to_buySellDialogFragment)
+            val modalBottomSheet = BuySellDialogFragment()
+            modalBottomSheet.show(childFragmentManager, modalBottomSheet.tag)
         }
 
         return binding.root
     }
+
 
 
 }

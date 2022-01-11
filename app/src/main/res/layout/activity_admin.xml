@@ -6,22 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.AdminActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/topBarAdminActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/topbar_button_style"
-        app:title="Admin Home"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_viewer_admin"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/topBarAdminActivity"
         android:layout_above="@id/bottom_navigation_admin"
         app:defaultNavHost="true"
         app:navGraph="@navigation/admin_nav_graph" />

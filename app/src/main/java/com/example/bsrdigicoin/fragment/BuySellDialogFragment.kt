@@ -83,8 +83,8 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                         "F"
                     )
                 )
-                it.findNavController()
-                    .navigate(R.id.action_buySellDialogFragment_to_userHomeFragment)
+                //it.findNavController().navigate(R.id.action_buySellDialogFragment_to_userHomeFragment)
+                dismiss()
             } else if (binding.toggleButtonGroup.checkedButtonId == R.id.toggle_btn_sell) {
                 if ((availableStock - stockCount) > 0) {
                     db.userDao().updateOrderStockCount(-stockCount, userid)
@@ -94,7 +94,7 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                             0,
                             userName,
                             stockCount,
-                            LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd")),
+                            LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                             LocalTime.now().truncatedTo(ChronoUnit.SECONDS)
                                 .format(DateTimeFormatter.ISO_LOCAL_TIME),
                             1000.00,
@@ -104,8 +104,8 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                             "F"
                         )
                     )
-                    it.findNavController()
-                        .navigate(R.id.action_buySellDialogFragment_to_userHomeFragment)
+                    //it.findNavController().navigate(R.id.action_buySellDialogFragment_to_userHomeFragment)
+                    dismiss()
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -122,5 +122,9 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
 
 
         return binding.root
+    }
+
+    companion object {
+        const val TAG = "ModalBottomSheet"
     }
 }

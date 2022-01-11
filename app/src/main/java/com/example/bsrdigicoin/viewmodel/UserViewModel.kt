@@ -19,7 +19,7 @@ class UserViewModel(context: Context): ViewModel() {
         "sharedpreference", Context.MODE_PRIVATE
     )
     val userid= prefs!!.getInt("userid",-1)
-    internal val allTransaction : LiveData<List<Transaction>> = db.transactionDao().getAll()
+    internal val allTransaction : LiveData<MutableList<Transaction>> = db.transactionDao().getTransactionsById(userid)
     internal val TransactionForReview : LiveData<MutableList<Transaction>> = db.transactionDao().getAllForReview()
     internal val userTransactionBooking : LiveData<MutableList<Transaction>> = db.transactionDao().orderInProgress(userid)
     internal val adminApprovedTransaction : LiveData<MutableList<Transaction>> = db.transactionDao().allapproved()
