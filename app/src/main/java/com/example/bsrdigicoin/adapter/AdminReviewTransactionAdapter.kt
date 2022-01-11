@@ -58,23 +58,26 @@ class AdminReviewTransactionAdapter(val context: Context, private var itemList :
             transactionDao.approveStatus(transaction.transactionId)
             itemList.removeAt(holder.adapterPosition)
             notifyItemRemoved(holder.adapterPosition)
+            if (transaction.stockTransactionType=="buy"){
+                db.userDao().updateOderTotalValue(-transaction.stockTotalPrice.toInt(),transaction.UserId)
+                db.userDao().updateOrderStockCount(-transaction.noOfStock.toInt(),transaction.UserId)
+                db.userDao().updateStockCount(+transaction.noOfStock.toInt(),transaction.UserId)
+                db.userDao().updateTotalValue(+transaction.stockTotalPrice.toInt(),transaction.UserId)
+            }
+
+            else{
+                db.userDao().updateOderTotalValue(-transaction.stockTotalPrice.toInt(),transaction.UserId)
+                db.userDao().updateOrderStockCount(-transaction.noOfStock.toInt(),transaction.UserId)
+                db.userDao().updateStockCount(-transaction.noOfStock.toInt(),transaction.UserId)
+                db.userDao().updateTotalValue(-transaction.stockTotalPrice.toInt(),transaction.UserId)
+            }
         }
         holder.btnDisapprove.setOnClickListener {
             transactionDao.disapproveStatus(transaction.transactionId)
+            db.userDao().updateOderTotalValue(-transaction.stockTotalPrice.toInt(),transaction.UserId)
+            db.userDao().updateOrderStockCount(-transaction.noOfStock.toInt(),transaction.UserId)
             itemList.removeAt(holder.adapterPosition)
             notifyItemRemoved(holder.adapterPosition)
-
-        }
-        if(transaction.status=="A") {
-            //holder.btnApprove.setColorFilter(Color.argb(150,200,200,200))
-            holder.btnApprove.visibility = View.VISIBLE
-            holder.btnDisapprove.visibility = View.INVISIBLE
-
-        }
-        if(transaction.status=="D") {
-            //holder.btnApprove.setColorFilter(Color.argb(150, 200, 200, 200))
-            holder.btnApprove.visibility = View.INVISIBLE
-            holder.btnDisapprove.visibility = View.VISIBLE
 
         }
     }

@@ -26,4 +26,10 @@ interface UserDao {
     fun updateTotalValue(transactionAmount:Int,userid:Int)
     @Query("SELECT userTotalCount FROM user_table where userId=:userid")
     fun getTotalStocks(userid: Int): Int
+
+    @Query("Update user_table set userOrderCount=userOrderCount + :stockCount where userId=:userid")
+    fun updateOrderStockCount(stockCount:Int,userid:Int)
+    @Query("Update user_table set userOrderValue=userOrderValue + :transactionAmount where userId=:userid")
+    fun updateOderTotalValue(transactionAmount:Int,userid:Int)
+
 }

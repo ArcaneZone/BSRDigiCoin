@@ -47,6 +47,7 @@ class UserHomeFragment : Fragment() {
             binding.userUseridInput.text = "User Id: ${it.userId}"
             binding.userStocksaquiredInput.text = "Stocks Acquired: ${it.userTotalCount}"
             binding.userCurrentvalueinvestedInput.text = "Currently Invested: ${it.TotalValue}"
+            binding.userCurrentvalueorderedInput.text = "Currently Ordered: ${it.userOrderValue}(${it.userOrder})"
         })
 
         binding.recyclerviewUserOrders.layoutManager = layoutManager

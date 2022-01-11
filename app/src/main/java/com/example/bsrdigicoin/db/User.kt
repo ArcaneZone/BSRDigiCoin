@@ -19,5 +19,9 @@ data class User(
     @ColumnInfo(name = "userBalance")
     val TotalValue: Double,
     @ColumnInfo(name = "userTotalCount")
-    val userTotalCount: Int
+    val userTotalCount: Int,
+    @ColumnInfo(name = "userOrderCount")
+    val userOrder: Int,
+    @ColumnInfo(name = "userOrderValue")
+    val userOrderValue: Double,
 )

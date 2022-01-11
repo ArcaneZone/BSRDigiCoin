@@ -66,8 +66,8 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
         binding.btnConfirmTransaction.setOnClickListener {
             val stockValue = stockCount * 1000.00
             if (binding.toggleButtonGroup.checkedButtonId == R.id.toggle_btn_buy) {
-                db.userDao().updateStockCount(stockCount, userid)
-                db.userDao().updateTotalValue(stockCount, userid)
+                db.userDao().updateOrderStockCount(stockCount, userid)
+                db.userDao().updateOderTotalValue(stockCount*1000, userid)
                 transactionDao.insert(
                     Transaction(
                         0,
@@ -87,7 +87,8 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                     .navigate(R.id.action_buySellDialogFragment_to_userHomeFragment)
             } else if (binding.toggleButtonGroup.checkedButtonId == R.id.toggle_btn_sell) {
                 if ((availableStock - stockCount) > 0) {
-                    db.userDao().updateStockCount(-stockCount, userid)
+                    db.userDao().updateOrderStockCount(-stockCount, userid)
+                    db.userDao().updateOderTotalValue(-stockCount*1000, userid)
                     transactionDao.insert(
                         Transaction(
                             0,

@@ -59,7 +59,7 @@ class UserRegistrationFragment : Fragment() {
             }
             else{
                 Toast.makeText(requireContext(), "User Registered", Toast.LENGTH_SHORT).show()
-                userDao.insert(User(0,username, userFullName,userEmail,userPassword,0.00, 0))
+                userDao.insert(User(0,username, userFullName,userEmail,userPassword,0.00, 0,0,0.00))
             }
 
         }
