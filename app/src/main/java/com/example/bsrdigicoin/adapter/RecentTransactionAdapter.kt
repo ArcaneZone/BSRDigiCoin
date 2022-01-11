@@ -26,8 +26,7 @@ class RecentTransactionAdapter(val context: Context, private var itemList : List
     val transactionDao = db.transactionDao()
 
     class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        val userName: TextView =view.findViewById(R.id.user_name)
-        val stockName: TextView =view.findViewById(R.id.txt_stock_name)
+        val userName: TextView =view.findViewById(R.id.txt_username)
         val stockDate: TextView =view.findViewById(R.id.txt_stock_date)
         val stockTime: TextView =view.findViewById(R.id.txt_stock_time)
         val stockType: TextView =view.findViewById(R.id.txt_stock_transaction_type)
@@ -46,7 +45,6 @@ class RecentTransactionAdapter(val context: Context, private var itemList : List
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val transaction=itemList[position]
         holder.userName.text=transaction.userName
-        holder.stockName.text= transaction.stockName
         holder.stockDate.text=transaction.stockDate
         holder.stockTime.text=transaction.stockTime
         holder.stockType.text=transaction.status.toString()

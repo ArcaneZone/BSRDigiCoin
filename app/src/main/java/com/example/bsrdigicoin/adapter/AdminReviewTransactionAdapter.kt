@@ -26,13 +26,12 @@ class AdminReviewTransactionAdapter(val context: Context, private var itemList :
     val transactionDao = db.transactionDao()
 
     class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        val noOfStock: TextView =view.findViewById(R.id.adm_transaction_noOfStocks)
-        val userName: TextView =view.findViewById(R.id.adm_transaction_userName)
-        val stockName: TextView =view.findViewById(R.id.adm_transaction_nameStock)
-        val stockDate: TextView =view.findViewById(R.id.adm_transaction_date)
-        val stockTime: TextView =view.findViewById(R.id.adm_transaction_time)
-        val stockType: TextView =view.findViewById(R.id.adm_transaction_stockType)
-        val stockPrice: TextView =view.findViewById(R.id.adm_transaction_purchasedAt)
+        val noOfStock: TextView =view.findViewById(R.id.txt_no_of_stock)
+        val userName: TextView =view.findViewById(R.id.txt_username)
+        val stockDate: TextView =view.findViewById(R.id.txt_stock_date)
+        val stockTime: TextView =view.findViewById(R.id.txt_stock_time)
+        val stockType: TextView =view.findViewById(R.id.txt_stock_transaction_type)
+        val stockPrice: TextView =view.findViewById(R.id.txt_stock_price)
         val btnApprove: MaterialButton = view.findViewById(R.id.btn_transaction_isApproved)
         val btnDisapprove: MaterialButton = view.findViewById(R.id.btn_transaction_isNotApproved)
     }
@@ -50,7 +49,6 @@ class AdminReviewTransactionAdapter(val context: Context, private var itemList :
         val transaction=itemList[position]
         holder.noOfStock.text=transaction.noOfStock.toString()
         holder.userName.text=transaction.userName
-        holder.stockName.text= transaction.stockName
         holder.stockDate.text=transaction.stockDate
         holder.stockTime.text=transaction.stockTime
         holder.stockType.text=transaction.status.toString()

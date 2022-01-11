@@ -3,13 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name="loginViewModel"
-            type="com.example.bsrdigicoin.viewmodel.LoginViewModel" />
-
-    </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -136,7 +129,6 @@
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/button_style"
-            android:onClick="@{(v) -> loginViewModel.onClick(v)"
             android:text="LOGIN"
             android:textColor="@color/white"/>
 

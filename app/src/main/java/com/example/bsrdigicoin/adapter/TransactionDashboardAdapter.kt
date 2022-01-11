@@ -22,7 +22,6 @@ class TransactionDashboardAdapter(val context: Context, private var itemList: Li
     //private val db = DatabaseHandler(context)
     class ItemViewHolder (view: View) : RecyclerView.ViewHolder(view){
         val noOfStock:TextView=view.findViewById(R.id.txt_no_of_stock)
-        val stockName:TextView=view.findViewById(R.id.txt_stock_name)
         val stockDate: TextView =view.findViewById(R.id.txt_stock_date)
         val stockTime: TextView =view.findViewById(R.id.txt_stock_time)
         val stockType: TextView =view.findViewById(R.id.txt_stock_transaction_type)
@@ -42,7 +41,6 @@ class TransactionDashboardAdapter(val context: Context, private var itemList: Li
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val transaction=itemList[position]
         holder.noOfStock.text=transaction.noOfStock.toString()
-        holder.stockName.text= transaction.stockName
         holder.stockDate.text=transaction.stockDate
         holder.stockTime.text=transaction.stockTime
         holder.stockType.text=transaction.stockTransactionType

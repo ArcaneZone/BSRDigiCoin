@@ -1,6 +1,8 @@
 package com.example.bsrdigicoin
 
 import android.os.Bundle
+import android.os.PatternMatcher
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import androidx.room.Room
 import com.example.bsrdigicoin.databinding.FragmentUserRegistrationBinding
 import com.example.bsrdigicoin.db.TransactionDatabase
 import com.example.bsrdigicoin.db.User
+import com.wajahatkarim3.easyvalidation.core.view_ktx.noSpecialCharacters
 
 
 class UserRegistrationFragment : Fragment() {
@@ -45,7 +48,7 @@ class UserRegistrationFragment : Fragment() {
             if (userPassword.length<8){
                 binding.etRegisterConfirmPassword.error = "Passwords length is less than 8 "
             }
-            else if ( binding.etRegisterEmail.editText?.text.toString().isEmpty()){
+            else if ( binding.etRegisterEmail.editText?.text.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(binding.etRegisterEmail.editText?.text.toString()).matches()){
                 binding.etRegisterEmail.error="Email not valid"
             }
             else if(userFullName.isEmpty()){

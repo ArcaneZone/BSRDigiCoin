@@ -14,8 +14,6 @@ data class Transaction(
     val transactionId:Int,
     @ColumnInfo(name = "user_name")
     val userName: String,
-    @ColumnInfo(name = "stock_name")
-    val stockName: String,
     @ColumnInfo(name = "no_of_stock")
     val noOfStock: Int,
     @ColumnInfo(name = "stock_date")

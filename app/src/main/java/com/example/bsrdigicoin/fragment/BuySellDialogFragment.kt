@@ -72,7 +72,6 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                     Transaction(
                         0,
                         userName,
-                        "Decoin",
                         stockCount,
                         LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                         LocalTime.now().truncatedTo(ChronoUnit.SECONDS)
@@ -93,7 +92,6 @@ class BuySellDialogFragment : BottomSheetDialogFragment() {
                         Transaction(
                             0,
                             userName,
-                            "Decoin",
                             stockCount,
                             LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd")),
                             LocalTime.now().truncatedTo(ChronoUnit.SECONDS)

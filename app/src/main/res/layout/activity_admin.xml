@@ -10,7 +10,7 @@
         android:id="@+id/topBarAdminActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
+        android:background="@drawable/topbar_button_style"
         app:title="Admin Home"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -31,7 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_alignParentBottom="true"
+        android:background="#303030"
+        app:itemIconTint="#b8bb26"
+        app:itemTextColor="#ebdbb2"
+        app:menu="@menu/admin_menu"
         tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="667dp"
-        app:menu="@menu/admin_menu"/>
+        tools:layout_editor_absoluteY="667dp" />
 </RelativeLayout>
